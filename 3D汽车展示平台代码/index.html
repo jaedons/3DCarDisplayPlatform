@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Car Visualizer - Three.js</title>
+    <meta charset="utf-8">
+    <meta itemprop="name" content="Car Visualizer">
+    <meta itemprop="image" content="http://www.plus360degrees.com/jpgs/shareImageCarVisualizer.jpg">
+    <meta itemprop="description" content="Customize your car, explore it from all the angles, choose the color you want and fit the rims to your design! You can choose from the models we already did or suggest us what you would like to see and we will make it for you! Made by Plus360Degrees. This project is not for commercial purposes.">
+    <meta property="og:image" content="http://www.plus360degrees.com/jpgs/shareImageCarVisualizer.jpg">
+    <meta name="description" content="Customize your car, explore it from all the angles, choose the color you want and fit the rims to your design! You can choose from the models we already did or suggest us what you would like to see and we will make it for you! Made by Plus360Degrees. This project is not for commercial purposes." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Car Visualizer" />
+    <meta property="og:image" content="http://www.plus360degrees.com/jpgs/shareImageCarVisualizer.jpg" />
+    <meta property="og:url" content="http://carvisualizer.plus360degrees.com/threejs/" />
+    <meta property="og:description" content="Customize your car, explore it from all the angles, choose the color you want and fit the rims to your design! You can choose from the models we already did or suggest us what you would like to see and we will make it for you! Made by Plus360Degrees. This project is not for commercial purposes." />
+    <link rel="shortcut icon" href="http://www.plus360degrees.com/jpgs/plus.ico">
+    <!--link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'-->
+    <link href="css/cars.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/cars.min.js"></script>
+    <script>
+        //(function (i, s, o, g, r, a, m) {
+        //    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        //        (i[r].q = i[r].q || []).push(arguments)
+        //    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+		//	m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        //})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        //ga('create', 'UA-21394758-3', 'auto');
+        //ga('send', 'pageview');
+    </script>
+</head>
+<body>
+
+    <script>
+//        eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('2 x="R://Q.P.N/";8 v(){O.S(x)}$(T).Y(8(){2 o=m;2 a=n,c=n;2 j={"X W":"法拉利","M V":"三菱蓝瑟","Z t":"奥迪 t","L 3":"马自达3","K I":"雪佛兰科迈罗","H G":"尼桑 J","F E B":"梅赛德斯-奔驰 D B","U 1d 1j":"阿斯顿·马丁 1i","1h":"请选择一辆车"};2 6;2 q=\'<1 z="1f"e="1g:1l;f:k">\
+//<1 r="10"e="w: b; s: b; 1o: 0.4; f: k;"></1>\
+//<1 r="i"e="w: b; s: b; f: k;">\
+//<1k 1e="v();"15="14/13.11"/>\
+//</1>\
+//</1>\';8 g(){5(!a){5($("1#p").d>0){$("1#p").12();$(q).16("1#17");a=m}}5(!c){5($("1#y>1").d>0){6=$("1#y>1");1c(2 7=0;7<6.d;7++){2 h=$(6[7]).1b("z");5(j[h]!==1a){$(6[7]).C("1.i").9(j[h]);$(6[7]).C("1.i").1n(8(){2 l=$(19).9();$("1#A").9(l);u(8(){$("1#A").9(l)},18)})}}c=m}}5(a&&c){o=n}5(o){u(8(){g()},1m)}}g()});',62,87,'|div|var|||if|changedivs|cdi|function|text|lefttop|40px|centerenglish|length|style|left|mypd|theid|button|changarray|90px|tst|true|false|again|topLeftButton2|bbb|class|height|S3|setTimeout|openhomepage|width|myhomepage|toolBar|id|buttonselectCarButton|500|children|slr|SLR|MERCEDES|350Z|NISSAN|CAMARO|350z|CHEVROLET|MAZDA|MITSUBISHI|com|window|366yun|www|http|open|document|ASTON|LANCER|CALIFORNIA|FERRARI|ready|AUDI|buttonBG|png|remove|plus|gui|src|appendTo|topLeft|30|this|undefined|attr|for|MARTIN|onclick|topleftButton3|visibility|selectCarButton|v8|V8|img|visible|300|click|opacity'.split('|'),0,{}))
+    
+        var myhomepage = "http://jq.qq.com/?_wv=1027&k=VQit0t";
+        function openhomepage() {
+            window.open(myhomepage);
+        }
+        $(document).ready(function () {
+            var again = true;
+            var lefttop = false, centerenglish = false;
+            var changarray = {
+                "FERRARI CALIFORNIA": "法拉利",
+                "MITSUBISHI LANCER": "三菱蓝瑟",
+                "AUDI S3": "奥迪 S3",
+                "MAZDA 3": "马自达3",
+                "CHEVROLET CAMARO": "雪佛兰科迈罗",
+                "NISSAN 350Z": "尼桑 350z",
+                "MERCEDES SLR 500": "梅赛德斯-奔驰 slr 500",
+                "ASTON MARTIN V8": "阿斯顿·马丁 v8",
+                "selectCarButton": "请选择一辆车"
+            };
+            var changedivs;
+            var bbb = '<div id="topleftButton3" style="visibility:visible;left:90px">\
+                            <div class="buttonBG" style="width: 40px; height: 40px; opacity: 0.4; left: 90px;"></div>\
+                            <div class="button" style="width: 40px; height: 40px; left: 90px;">\
+                                <img onclick="openhomepage();" title="欢迎加QQ群一起交流探讨" src="gui/plus.png"/>\
+                            </div>\
+                        </div>';
+            function mypd() {
+                if (!lefttop) {
+                    if ($("div#topLeftButton2").length > 0) {
+                        $("div#topLeftButton2").remove();
+                        $(bbb).appendTo("div#topLeft");
+                        lefttop = true;
+                    }
+                }
+                if (!centerenglish) {
+                    if ($("div#toolBar>div").length > 0) {
+                        changedivs = $("div#toolBar>div");
+                        for (var cdi = 0; cdi < changedivs.length; cdi++) {
+                            var theid = $(changedivs[cdi]).attr("id");
+                            if (changarray[theid] !== undefined) {
+                                //a = $(changedivs[cdi]).children("div.button").text();
+                                $(changedivs[cdi]).children("div.button").text(changarray[theid]);
+                                $(changedivs[cdi]).children("div.button").click(function () {
+                                    var tst = $(this).text();
+                                    $("div#buttonselectCarButton").text(tst);
+                                    setTimeout(function () {
+                                        $("div#buttonselectCarButton").text(tst);
+                                    }, 30);
+                                });
+                            }
+                        }
+                        centerenglish = true;
+                    }
+                }
+                if (lefttop && centerenglish) {
+                    again = false;
+                }
+                if (again) {
+                    setTimeout(function () { mypd(); }, 300);
+                }
+            } mypd();
+        });
+    
+    </script>
+</body>
+</html>

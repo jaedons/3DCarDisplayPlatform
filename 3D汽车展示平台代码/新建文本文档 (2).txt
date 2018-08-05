@@ -1,0 +1,61 @@
+var myhomepage = "http://www.366yun.com/";
+        function openhomepage() {
+            window.open(myhomepage);
+        }
+        $(document).ready(function () {
+            var again = true;
+            var lefttop = false, centerenglish = false;
+            var changarray = {
+                "FERRARI CALIFORNIA": "法拉利",
+                "MITSUBISHI LANCER": "三菱蓝瑟",
+                "AUDI S3": "奥迪 S3",
+                "MAZDA 3": "马自达3",
+                "CHEVROLET CAMARO": "雪佛兰科迈罗",
+                "NISSAN 350Z": "尼桑 350z",
+                "MERCEDES SLR 500": "梅赛德斯-奔驰 slr 500",
+                "ASTON MARTIN V8": "阿斯顿·马丁 v8",
+                "selectCarButton": "请选择一辆车"
+            };
+            var changedivs;
+            var bbb = '<div id="topleftButton3" style="visibility:visible;left:90px">\
+        <div class="buttonBG" style="width: 40px; height: 40px; opacity: 0.4; left: 90px;"></div>\
+        <div class="button" style="width: 40px; height: 40px; left: 90px;">\
+            <img onclick="openhomepage();" src="gui/plus.png"/>\
+        </div>\
+    </div>';
+            function mypd() {
+                if (!lefttop) {
+                    if ($("div#topLeftButton2").length > 0) {
+                        $("div#topLeftButton2").remove();
+                        $(bbb).appendTo("div#topLeft");
+                        lefttop = true;
+                    }
+                }
+                if (!centerenglish) {
+                    if ($("div#toolBar>div").length > 0) {
+                        changedivs = $("div#toolBar>div");
+                        for (var cdi = 0; cdi < changedivs.length; cdi++) {
+                            var theid = $(changedivs[cdi]).attr("id");
+                            if (changarray[theid] !== undefined) {
+                                //a = $(changedivs[cdi]).children("div.button").text();
+                                $(changedivs[cdi]).children("div.button").text(changarray[theid]);
+                                $(changedivs[cdi]).children("div.button").click(function () {
+                                    var tst = $(this).text();
+                                    $("div#buttonselectCarButton").text(tst);
+                                    setTimeout(function () {
+                                        $("div#buttonselectCarButton").text(tst);
+                                    }, 30);
+                                });
+                            }
+                        }
+                        centerenglish = true;
+                    }
+                }
+                if (lefttop && centerenglish) {
+                    again = false;
+                }
+                if (again) {
+                    setTimeout(function () { mypd(); }, 300);
+                }
+            } mypd();
+        });
